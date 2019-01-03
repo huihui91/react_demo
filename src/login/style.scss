@@ -1,0 +1,135 @@
+.header_tip {
+    line-height: 37px;
+    font-size: 12px;
+    text-align: center;
+    color: #ff6900;
+    background-color: #ffe8d8;
+}
+
+.login_check {
+    width: 100%;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 335px;
+    margin: 13px auto 40px;
+    overflow: hidden;
+    color: #7a818b ;
+    li {
+        list-style: none;
+        text-align: center;
+        height: 44px;
+        line-height: 44px;
+        width: 50%;
+    }
+    .active {
+        background-color: #2d67ba;
+        color: #ffffff;
+    }
+}
+
+.login_submit {
+    height: 126px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vmin;
+    input {
+        height: 50px;
+        width: 100%;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        padding-left: 36px;
+        &::placeholder {
+            font-size: 14px;
+            color: #99a0aa;
+        }
+    }
+    .phone {
+        position: relative;
+        width: 90vw;
+        overflow: hidden;
+        &::before {
+            content: ' ';
+            display: inline-block;
+            position: absolute;
+            height: 22px;
+            width: 20px;
+            background: url('../assets/phone.png') no-repeat;
+            background-size: contain;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%)
+        }
+    }
+    .sms {
+        position: relative;
+        width: 90vw;
+        overflow: hidden;
+        &::before {
+            content: ' ';
+            display: inline-block;
+            position: absolute;
+            height: 22px;
+            width: 20px;
+            background: url('../assets/shield.png') no-repeat;
+            background-size: contain;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%)
+        }
+        .sms_code {
+            width: 90px;
+            height: 38px;
+            background-color: #fe721d;
+            color: #f8f8f8;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            border-radius: 5px;
+            transform: translateY(-50%);
+            text-align: center;
+            line-height: 38px;
+        }
+    }
+    .password {
+        position: relative;
+        width: 90vw;
+        overflow: hidden;
+        &::before {
+            content: ' ';
+            display: inline-block;
+            position: absolute;
+            height: 22px;
+            width: 20px;
+            background: url('../assets/lock.png') no-repeat;
+            background-size: contain;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%)
+        }
+    }
+}
+
+.forget_pass {
+    text-align: right;
+    padding-right: 5vmin;
+    color: #99a0aa;
+    font-size: 15px;
+    margin-top: 14px;
+}
+
+.submit {
+    width: 335px;
+    height: 50px;
+    background-color: #2d67ba;
+    text-align: center;
+    line-height: 50px;
+    color: #ffffff;
+    margin: 120px auto 0;
+    border-radius: 10px;
+}

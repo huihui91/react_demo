@@ -1,0 +1,154 @@
+.confirm_loan {
+    background: #f8f8f8;
+    height: 100vh;
+    .submit_btn {
+        position: fixed;
+        width: 100vw;
+        width: 375px;
+        height: 55px;
+        background-color: #cacaca;
+        text-align: center;
+        line-height: 55px;
+        font-size: 18px;
+        text-align: center;
+        color: #ffffff;
+        bottom: 0;
+    }
+}
+
+.loan_money_top {
+    background: #ffffff;
+    margin-top: 28px;
+    padding: 0 20px;
+    .loan_max {
+        line-height: 15px;
+        font-size: 13px;
+        color: #99a0aa;
+    }
+    .loan_input {
+        position: relative;
+        margin-top: 20px;
+        text-align: center;
+        &::before {
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            content: "\FFE5";
+            width: 15px;
+            color: #4a5f76;
+            transform: translateY(-50%);
+            font-size: 30px;
+        }
+        input {
+            width: 335px;
+            height: 50px;
+            background-color: #f8f8f8;
+            padding-left: 30px;
+            border-radius: 10px;
+            color: #4a5f76;
+            font-size: 30px;
+        }
+    }
+    .slider_line {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .slider_reduce {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #2d67ba;
+            text-align: center;
+            line-height: 15px;
+            color: #2d67ba;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .slider_add {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #2d67ba;
+            text-align: center;
+            line-height: 15px;
+            color: #2d67ba;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .ant-slider {
+            width: 76vmin;
+            .ant-slider-rail {
+                background-color: #eceff3;
+            }
+            .ant-slider-track {
+                background-color: #2d67ba;
+            }
+            .ant-slider-handle {
+                background-color: #2d67ba;
+                border-color: #2d67ba;
+                height: 20px;
+                width: 20px;
+                margin-top: -10px;
+            }
+        }
+    }
+    .slider_range {
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        span {
+            font-size: 13px;
+            color: #99a0aa;
+        }
+    }
+}
+
+.periods {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 17px 10px 0 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    height: 145px;
+    padding: 10px 15px;
+    &>p {
+        font-size: 13px;
+        color: #4a5f76;
+    }
+    .periods_items {
+        &>span {
+            width: 90px;
+            height: 40px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+            background-color: #ffffff;
+            display: inline-block;
+            margin-right: 25px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+        .ative {
+            background-color: #2d67ba;
+            color: #ffffff;
+        }
+    }
+    .periods_bottom {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.contract {
+    margin: 17px 10px 0 10px;
+}
