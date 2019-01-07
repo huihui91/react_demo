@@ -1,0 +1,86 @@
+.bind_bank {
+    padding: 0 25px;
+    ul {
+        li {
+            height: 93px;
+            border-bottom: 2px solid #dedede;
+            padding: 20px 0;
+            &>p {
+                line-height: 15px;
+                font-size: 15px;
+                color: #4a5f76;
+            }
+            &>div {
+                line-height: 18px;
+                font-size: 18px;
+                color: #99a0aa;
+            }
+            .arrow {
+                position: relative;
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background: url('../assets/rightArrow.png') no-repeat;
+                    background-size: cover;
+                    right: 5px;
+                    top: 0px;
+                }
+            }
+        }
+    }
+    .tips {
+        width: 285px;
+        height: 88px;
+        font-size: 12px;
+        line-height: 1.83;
+        color: #99a0aa;
+        p {
+            margin: 0;
+        }
+    }
+    .bind_bank_btn {
+        width: 100vw;
+        line-height: 55px;
+        text-align: center;
+        background-color: #b1b1b1;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        font-size: 18px;
+        color: #ffffff;
+    }
+}
+
+.sign_xloan {
+    padding: 0 25px;
+    ul {
+        li {
+            height: 80px;
+            border-bottom: 2px solid #dedede;
+            padding: 20px 0;
+            &>p {
+                line-height: 15px;
+                font-size: 15px;
+                color: #4a5f76;
+            }
+            &>div {
+                line-height: 18px;
+                font-size: 18px;
+                color: #99a0aa;
+            }
+        }
+    }
+    .sign_submit_btn {
+        background: #2d67ba;
+        width: 100vw;
+        line-height: 55px;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        font-size: 18px;
+        color: #ffffff;
+    }
+}

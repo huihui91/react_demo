@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.scss";
-import { Slider, Switch } from 'antd'
+import { Slider } from 'antd'
 import { Radio } from 'antd';
 
 //借款金额

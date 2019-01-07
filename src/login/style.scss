@@ -17,13 +17,14 @@
     width: 335px;
     margin: 13px auto 40px;
     overflow: hidden;
-    color: #7a818b ;
+    color: #7a818b;
     li {
         list-style: none;
         text-align: center;
         height: 44px;
         line-height: 44px;
         width: 50%;
+        touch-action: none;
     }
     .active {
         background-color: #2d67ba;
@@ -44,6 +45,7 @@
         background-color: #f8f8f8;
         border-radius: 5px;
         padding-left: 36px;
+        border: none;
         &::placeholder {
             font-size: 14px;
             color: #99a0aa;
