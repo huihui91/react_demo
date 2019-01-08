@@ -67,7 +67,9 @@ function ContractList(props) {
 
 class ConfirmLoan extends Component{
   constructor(props){
-    super(props)
+    super(props);
+    console.log(this.props.location.query.day)
+    console.log(this.props.history)
   }
   render(){
     return(

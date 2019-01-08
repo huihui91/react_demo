@@ -6,19 +6,24 @@ function getToken(params) {
   return window.sessionStorage.getItem('uerToken')
 }
 
-const instance = axios.create(
+window.instance = axios.create(
   {
     baseURL:"/xloan-app-api/",
     timeout: 10000,
     headers: {
     'filter-key': 'filter-header',
-    'x-auth-token': window.userToken || getToken()
+     "xloanVersion": "1.3.2",
   }
   }
 )
 
-class Http{
+let token = getToken();
+console.log(token)
+if(token) window.userToken=token;
+window.instance.defaults.headers.common['x-auth-token'] = window.userToken;
 
+class Http{
+  
   constructor(){
   /*   axios.defaults.baseURL ="/xloan-app-api/";
     axios.defaults.timeout = 100000; */
@@ -26,29 +31,32 @@ class Http{
 
   async get(url, resData = {}){
     try{
-      let data = await instance.get(url, {
+      let { data } = await window.instance.get(url, {
         params: resData
       });
-      if (data.code !== '000000') {
-        Toast(data.message);
+      if (data.status !== 0) {
+        Toast.info(data.message);
+        return false;
       }
-      return data.data;
+      return data;
     }catch(err){
-      Toast(err);
+      Toast.info(err.message);
     }
   }
   
   async post(url, resData = {}) {
     try {
-      let data = await instance.post(url, {
-        params: resData
-      });
-      if (data.code !== '000000') {
-        Toast(data.message);
+      let { data } = await window.instance.post(url, 
+       resData
+      );
+
+      if (data.status !== 0) {
+        Toast.info(data.message);
+        return false;
       }
-      return data.data;
+      return data;
     } catch (err) {
-     console.log(err)
+      Toast.info(err.message);
     }
   }
 

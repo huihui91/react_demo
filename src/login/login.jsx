@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import './style.scss'
 
-import { login } from "../api/index.js";
+import { login, getSignInfo} from "../api/index.js";
 
 //提示
 function HeaderTip(params) {
@@ -61,7 +61,9 @@ class Login extends Component{
       userLoginInfo:{
         mobile: "",
         password: "",
-        smsCode: ""
+        smsCode: "",
+        loginType:'pwd',
+        loginChannelId:'2'
       }
     }
   }
@@ -79,14 +81,27 @@ class Login extends Component{
   loginHandle(e){
     this.setState({ loginType: e.target.value,
       userLoginInfo: {
-        mobile: "",
+        mobile: this.state.userLoginInfo.mobile,
         password: "",
-        smsCode: ""
+        smsCode: "",
+        loginType: 'pwd',
+        loginChannelId: '2'
       }
     })
   }
-  userLogin(e){
-    login(this.state.userLoginInfo)
+ async userLogin(e){
+   this.props.history.push({ pathname: '/confirmloan', query: { day: 'Friday' } })
+  /*  this.props.history.push({ pathname: '/confirmloan', state: { day: 'Friday' }  }) */
+/*    let data= await login(this.state.userLoginInfo);
+ 
+   if (data.status===0){
+     window.userToken = data.data.userToken;
+     sessionStorage.setItem('userToken', window.userToken)
+     window.instance.defaults.headers.common['x-auth-token'] = window.userToken;
+     this.getUserInfo()
+   } */
+
+
   }
   phoneBulr(e){
     let value = e.target.value
@@ -121,6 +136,13 @@ class Login extends Component{
         }
       }
     })
+  }
+ async getUserInfo(){
+   let data= await getSignInfo();
+   console.log(data,'data')
+
+  /*  this.props.history.push('/confirmloan') */
+   this.props.history.push({ pathname: '/confirmloan', query: { day: 'Friday' } })
   }
 }
 
