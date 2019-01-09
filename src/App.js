@@ -12,10 +12,12 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/confirmloan" exact component={ConfirmLoan}></Route>
-          <Route path="/login" exact component={Login}></Route>
-          <Route path="/signxloan" exact component={SignXloan}></Route>
-          <Route path="/done" exact component={Done}></Route>
+          <Route path="/login"  component={Login}></Route>
+          <Route path="/confirmloan"  component={ConfirmLoan}></Route>
+          <Route path="/signxloan"  component={SignXloan}></Route>
+          <Route path="/done"  component={Done}></Route>
+          <Route path="/done"  component={Done}></Route>
+          <Route component={Login} />
         </Switch>
       </Router>
     );

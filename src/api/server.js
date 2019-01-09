@@ -18,7 +18,6 @@ window.instance = axios.create(
 )
 
 let token = getToken();
-console.log(token)
 if(token) window.userToken=token;
 window.instance.defaults.headers.common['x-auth-token'] = window.userToken;
 

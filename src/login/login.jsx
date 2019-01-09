@@ -3,6 +3,7 @@ import './style.scss'
 
 import { login, getSignInfo} from "../api/index.js";
 
+
 //提示
 function HeaderTip(params) {
   return(
@@ -90,17 +91,14 @@ class Login extends Component{
     })
   }
  async userLogin(e){
-   this.props.history.push({ pathname: '/confirmloan', query: { day: 'Friday' } })
-  /*  this.props.history.push({ pathname: '/confirmloan', state: { day: 'Friday' }  }) */
-/*    let data= await login(this.state.userLoginInfo);
+   let { data, status}= await login(this.state.userLoginInfo);
  
-   if (data.status===0){
-     window.userToken = data.data.userToken;
+   if (status===0){
+     window.userToken = data.userToken;
      sessionStorage.setItem('userToken', window.userToken)
      window.instance.defaults.headers.common['x-auth-token'] = window.userToken;
-     this.getUserInfo()
-   } */
-
+     this.getUserInfo(data)
+   }
 
   }
   phoneBulr(e){
@@ -137,12 +135,32 @@ class Login extends Component{
       }
     })
   }
- async getUserInfo(){
-   let data= await getSignInfo();
+ async getUserInfo(item){
+   let { data, status}= await getSignInfo();
+    Object.assign(data,item);
    console.log(data,'data')
+   if(status==0){
 
-  /*  this.props.history.push('/confirmloan') */
-   this.props.history.push({ pathname: '/confirmloan', query: { day: 'Friday' } })
+    let serch=`?userToken=${data.userToken}&user_id=${data.userID}&apply_id=${data.applyId}&phone=${data.account}&fundType=${data.fundType}&isRealName=${data.isRealName}&code=${data.isBindBankCard}&cgStatus=${data.cgStatus}&clientType=weChatH5`; 
+
+     if (data.applyStatus == '1') {
+       //确认借款
+       this.props.history.push(`/confirmloan${serch}`)
+       return
+     } else if (data.applyStatus == '5') {
+       //绑卡签约
+       this.props.history.push(`/signxloan${serch}`)
+       return
+     } else if (data.applyStatus == '8') {
+       //温馨提示
+       this.props.history.push(`/tips${serch}`)
+       return
+     } else {
+       this.props.history.push(`/tips${serch}`)
+       //温馨提示
+       return
+     }
+   }
   }
 }
 
