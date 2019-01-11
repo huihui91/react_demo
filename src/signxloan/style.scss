@@ -10,10 +10,21 @@
                 font-size: 15px;
                 color: #4a5f76;
             }
-            &>div {
+            input {
                 line-height: 18px;
                 font-size: 18px;
                 color: #99a0aa;
+                width: 100%;
+            }
+            label div {
+                line-height: 18px;
+                font-size: 18px;
+                color: #99a0aa;
+                width: 100%;
+                display: inline-block;
+            }
+            .bank_input {
+                padding-left: 0px;
             }
             .arrow {
                 position: relative;
@@ -69,7 +80,9 @@
                 line-height: 18px;
                 font-size: 18px;
                 color: #99a0aa;
+                padding-left: 15px;
             }
+
         }
     }
     .sign_submit_btn {

@@ -137,12 +137,10 @@ class Login extends Component{
   }
  async getUserInfo(item){
    let { data, status}= await getSignInfo();
-    Object.assign(data,item);
-   console.log(data,'data')
+   
    if(status==0){
-
-    let serch=`?userToken=${data.userToken}&user_id=${data.userID}&apply_id=${data.applyId}&phone=${data.account}&fundType=${data.fundType}&isRealName=${data.isRealName}&code=${data.isBindBankCard}&cgStatus=${data.cgStatus}&clientType=weChatH5`; 
-
+     Object.assign(data, item);
+     let serch=`?userToken=${data.userToken}&user_id=${data.userID}&apply_id=${data.applyId}&phone=${data.account}&fundType=${data.fundType}&isRealName=${data.isRealName}&code=${data.isBindBankCard}&cgStatus=${data.cgStatus}&clientType=weChatH5`; 
      if (data.applyStatus == '1') {
        //确认借款
        this.props.history.push(`/confirmloan${serch}`)

@@ -6,7 +6,7 @@
         width: 100vw;
         width: 375px;
         height: 55px;
-        background-color: #cacaca;
+        background-color: #2d67ba;
         text-align: center;
         line-height: 55px;
         font-size: 18px;
@@ -48,7 +48,7 @@
             color: #4a5f76;
             font-size: 30px;
             border: none;
-            &::placeholder{
+            &::placeholder {
                 font-size: 26px;
             }
         }
@@ -154,5 +154,5 @@
 }
 
 .contract {
-    margin: 17px 10px 0 10px;
+    margin: 17px 10px 70px 10px;
 }

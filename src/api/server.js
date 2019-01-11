@@ -1,9 +1,11 @@
 import axios from "axios";
 import { Toast } from "antd-mobile";
+import React from 'react'
+import { BrowserRouter as Router }  from 'react-router-dom'
 
 
-function getToken(params) {
-  return window.sessionStorage.getItem('uerToken')
+function getToken() {
+  return window.sessionStorage.getItem('userToken')
 }
 
 window.instance = axios.create(
@@ -18,7 +20,8 @@ window.instance = axios.create(
 )
 
 let token = getToken();
-if(token) window.userToken=token;
+
+if(token) window.userToken = token;
 window.instance.defaults.headers.common['x-auth-token'] = window.userToken;
 
 class Http{
@@ -33,11 +36,12 @@ class Http{
       let { data } = await window.instance.get(url, {
         params: resData
       });
-      if (data.status !== 0) {
+      if (data.status === 0) {
+        return data;
+      } else {
         Toast.info(data.message);
         return false;
       }
-      return data;
     }catch(err){
       Toast.info(err.message);
     }
@@ -48,12 +52,15 @@ class Http{
       let { data } = await window.instance.post(url, 
        resData
       );
-
-      if (data.status !== 0) {
+      if (data.status ===5000){
+        window.location.href="/login"
+       }else if (data.status === 0 || data.status === 1001) {
+        return data;
+      }else{
         Toast.info(data.message);
         return false;
       }
-      return data;
+      
     } catch (err) {
       Toast.info(err.message);
     }
