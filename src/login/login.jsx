@@ -8,7 +8,7 @@ import { login, getSignInfo} from "../api/index.js";
 function HeaderTip(params) {
   return(
     <section>
-      <div className="header_tip">温馨提示：未注册厚钱包账号的手机号，登录时将自动注册</div>
+      <div className="header_tip">温馨提示：未注册账号的手机号，登录时将自动注册</div>
     </section>
   )
 } 
