@@ -10,3 +10,10 @@ export const decrement = (counterCaption) => ({
   type: Decrement,
   counterCaption
 })
+
+export const demoworld = (counterCaption) => {
+  console.log(counterCaption,'counterCaption')
+  return {
+  type: 'demo',
+  data:counterCaption
+}}

@@ -1,13 +1,9 @@
-import { Increment, Decrement } from '../Actions'
+import { combineReducers } from "redux";
+import { setDemoOne } from "./demoOne";
+import { setDemoTwo } from "./demoTwo";
 
-export default (state, action) => {
-  const { counterCaption } = action
-  switch (action.type) {
-    case Increment:
-      return { ...state, [counterCaption]: state[counterCaption] + 1 }
-    case Decrement:
-      return { ...state, [counterCaption]: state[counterCaption] - 1 }
-    default:
-      return state
-  }
-}
+const store = combineReducers({
+  setDemoOne,
+  setDemoTwo
+})
+export default store
