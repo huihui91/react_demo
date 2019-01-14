@@ -2,6 +2,7 @@ import React,{ Component } from "react";
 
 import { increment, decrement } from '../Redux/Actions'
 import { connect } from 'react-redux';
+import "./style.scss";
 const buttonStyle = {
   margin: "20px"
 }
@@ -14,9 +15,9 @@ class demoRedux extends Component{
   render(){
     return(
      <section>
-        <div>{this.props.value}</div>
-        <button style={buttonStyle} onClick={e=>this.props.Increment(e)}>+</button>
-        <button style={buttonStyle} onClick={e=>this.props.Decrement(e)}>-</button>
+        <div className="value">{this.props.value}</div>
+        <button className="btn1" style={buttonStyle} onClick={e=>this.props.Increment(e)}>+</button>
+        <button className="btn2"  style={buttonStyle} onClick={e=>this.props.Decrement(e)}>-</button>
      </section>
     )
   }

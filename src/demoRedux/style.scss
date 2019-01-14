@@ -1,0 +1,21 @@
+.value {
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn1,
+.btn2 {
+    margin: 20px;
+    width: 80px;
+    height: 20px;
+    font-size: 18px;
+    border: 1px solid black;
+    background: blue;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.btn2 {
+    background: red;
+}
